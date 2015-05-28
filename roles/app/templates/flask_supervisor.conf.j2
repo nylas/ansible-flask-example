@@ -1,0 +1,7 @@
+[program:app]
+command={{ app.install_dir }}/flask_app.py
+user={{ app.owner }}
+autostart=true
+autorestart=true
+stdout_logfile={{ app.log_dir }}/app.log
+stderr_logfile={{ app.log_dir }}/app.err.log

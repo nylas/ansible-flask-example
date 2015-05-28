@@ -1,0 +1,5 @@
+---
+
+- name: Create users
+  user: name={{ item.key }}
+  with_dict: users.user_list

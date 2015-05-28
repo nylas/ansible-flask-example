@@ -1,0 +1,6 @@
+#ansible-test
+Dockerfile
+.ansible-test
+
+#emacs
+*~

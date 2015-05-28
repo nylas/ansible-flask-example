@@ -1,0 +1,4 @@
+---
+
+- name: reload supervisor config
+  command: supervisorctl reload && supervisorctl update

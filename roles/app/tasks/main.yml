@@ -1,0 +1,27 @@
+---
+
+- name: Setup Service Directories
+  file: >
+    state=directory
+    path="{{ item }}"
+    mode=755
+  with_items:
+    - "{{ app.install_dir }}"
+    - "{{ app.conf_dir }}"
+    - "{{ app.log_dir }}"
+
+- name: Install flask
+  pip: name=flask
+
+- name: Install supervisor configuration
+  template: >
+    src=flask_supervisor.conf.j2
+    dest=/etc/supervisor/conf.d/flask_supervisor.conf
+  notify: reload supervisor config
+
+- name: Deploy Flask App
+  copy: >
+    src=flask_app.py
+    dest="{{ app.install_dir }}/flask_app.py"
+    mode=755
+  notify: restart flask app

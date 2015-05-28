@@ -1,0 +1,4 @@
+---
+
+- name: restart flask app
+  supervisorctl: name=app state=restarted

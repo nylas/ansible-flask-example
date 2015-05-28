@@ -1,0 +1,7 @@
+---
+
+app:
+  owner: app
+  install_dir: /opt/app
+  conf_dir: /etc/app
+  log_dir: /var/log/app
