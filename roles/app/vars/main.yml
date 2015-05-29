@@ -1,5 +1,8 @@
 ---
 
+python:
+  version: 3.2
+
 users:
   user_list:
     app: {}
